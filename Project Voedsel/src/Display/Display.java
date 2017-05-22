@@ -1,13 +1,12 @@
 package Display;
 
-import java.awt.Canvas;
 import java.awt.Dimension;
-
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 public class Display {
 	private JFrame frame;
-	private Canvas canvas;
+	private JPanel jpanel;
 
 	private String title;
 	private int width, height;
@@ -28,18 +27,18 @@ public class Display {
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 
-		canvas = new Canvas();
-		canvas.setPreferredSize(new Dimension(width, height));
-		canvas.setMaximumSize(new Dimension(width, height));
-		canvas.setMinimumSize(new Dimension(width, height));
-		canvas.setFocusable(false);
+		jpanel = new JPanel();
+		jpanel.setPreferredSize(new Dimension(width, height));
+		jpanel.setMaximumSize(new Dimension(width, height));
+		jpanel.setMinimumSize(new Dimension(width, height));
+		jpanel.setFocusable(false);
 
-		frame.add(canvas);
+		frame.add(jpanel);
 		frame.pack();
 	}
 
-	public Canvas getCanvas() {
-		return canvas;
+	public JPanel getJpanel() {
+		return jpanel;
 	}
 
 	public JFrame getFrame() {
